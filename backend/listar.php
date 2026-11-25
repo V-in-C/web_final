@@ -1,5 +1,5 @@
 <?php
-// READ - lista as raças ativas (verbo GET)
+
 
 // Cabeçalhos de CORS (frontend e backend rodam em portas diferentes)
 header("Access-Control-Allow-Origin: *");
@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
 try {
     require "conexao.php";
 
-    $stmt = $pdo->prepare("SELECT id, nome, descricao, exemplo FROM jogo WHERE ativo = 1");
+    $stmt = $pdo->prepare("SELECT id, nome, descricao, exemplo FROM jogos WHERE ativo = 1");
     $stmt->execute();
-    $jogo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo json_encode($jogo);
+    echo json_encode($jogos);
 } catch (Exception $e) {
     http_response_code(500);
     echo json_encode(["erro" => "Erro no listamento dos jogos."]);
