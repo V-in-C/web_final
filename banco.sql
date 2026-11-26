@@ -11,7 +11,7 @@ CREATE TABLE jogos (
 );
 
 
-INSERT INTO racas (nome, descricao) VALUES
+INSERT INTO jogos (nome, descricao) VALUES
 ('UNO', 'Todos recebem 7 cartas, no seu turno, descarte uma carta com o simbulo ou cor igual ao da mesa, se nao puder, compre mais uma carta. vence quem nao tem mais cartas'),
 ('D&D', 'Crie uma aventura RPG para seus amigos'),
 ('War', 'Jogo de gerra');
