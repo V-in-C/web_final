@@ -11,7 +11,7 @@ function listar() {
                     <td>${jogo.nome}</td>
                     <td>${jogo.descricao}</td>
                     <td>
-                        ${jogos.exemplo ? `<a href="${jogo.exemplo}" alt="${jogo.nome}">` : "Sem exemplo"}
+                        ${jogos.exemplo ? `<a href="${jogo.exemplo}" target="_blank">Ver Exemplo</a>` : "Sem exemplo"}
                         <button onclick="trocarExemplo(${jogo.id})">Trocar Link</button>
                         <button onclick="removerExemplo(${jogo.id})">Remover Link</button>
                     </td>

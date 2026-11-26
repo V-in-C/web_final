@@ -5,7 +5,7 @@ USE jogos_mesa;
 CREATE TABLE IF NOT EXISTS jogos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    descricao VARCHAR(100) NOT NULL,
+    descricao VARCHAR(500) NOT NULL,
     exemplo VARCHAR(500) NOT NULL DEFAULT '',
     ativo TINYINT NOT NULL DEFAULT 1 
 );
