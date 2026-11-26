@@ -1,5 +1,5 @@
 <?php
-// CREATE - cadastra um novo jogo (verbo POST)
+
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
 try {
     require "conexao.php";
 
-    // Lê o JSON enviado pelo fetch
+
     $dados = json_decode(file_get_contents("php://input"), true);
 
     $stmt = $pdo->prepare("INSERT INTO jogos (nome, descricao, exemplo) VALUES (?, ?, ?)");

@@ -43,7 +43,7 @@ function cadastrar(){
             document.getElementById("nome").value = "";
             document.getElementById("descricao").value = "";
             document.getElementById("exemplo").value = "";
-            listar(); // novo GET depois da modificação
+            listar();
         });
 }
 
@@ -52,7 +52,7 @@ function atualizar(id, nomeAtual, descrocaoAtual) {
     const descricao = prompt("Nova descricao:", descrocaoAtual);
 
 
-    // Se o usuário clicou em "Cancelar" em algum prompt, não faz nada
+
     if (nome === null || descricao === null) {
         return;
     }
@@ -65,7 +65,7 @@ function atualizar(id, nomeAtual, descrocaoAtual) {
         .then(resposta => resposta.json())
         .then(dados => {
             alert(dados.mensagem || dados.erro);
-            listar(); // novo GET depois da modificação
+            listar();
         });
 }
 
@@ -82,7 +82,7 @@ function excluir(id) {
         .then(resposta => resposta.json())
         .then(dados => {
             alert(dados.mensagem || dados.erro);
-            listar(); // novo GET depois da modificação
+            listar();
         });
 }
 
@@ -95,14 +95,14 @@ function salvarExemplo(id, link) {
         .then(resposta => resposta.json())
         .then(dados => {
             alert(dados.mensagem || dados.erro);
-            listar(); // novo GET depois da modificação
+            listar();
         });
 }
 
 function trocarExemplo(id) {
     const link = prompt("Link do novo exemplo:");
     if (link === null) {
-        return; // clicou em Cancelar
+        return;
     }
     salvarExemplo(id, link);
 }

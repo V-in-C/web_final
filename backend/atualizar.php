@@ -1,5 +1,5 @@
 <?php
-// UPDATE - atualiza um jogo pelo id (verbo PUT)
+
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, OPTIONS");
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
 try {
     require "conexao.php";
 
-    // O JSON traz o id e os novos valores
+
     $dados = json_decode(file_get_contents("php://input"), true);
 
     $stmt = $pdo->prepare("UPDATE jogos SET nome = ?, descricao = ? WHERE id = ?");

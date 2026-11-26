@@ -1,6 +1,5 @@
 <?php
-// DELETE - exclui um jogo pelo id (verbo DELETE)
-// Não apaga de verdade: faz SOFT DELETE (ativo passa de 1 para 0)
+
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: DELETE, OPTIONS");
@@ -15,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
 try {
     require "conexao.php";
 
-    // O JSON traz apenas o id
+
     $dados = json_decode(file_get_contents("php://input"), true);
 
     $stmt = $pdo->prepare("UPDATE jogos SET ativo = 0 WHERE id = ?");
